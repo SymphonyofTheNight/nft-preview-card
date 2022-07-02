@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap'); // font-family: 'Outfit', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"); // font-family: 'Outfit', sans-serif;
 
 *{
     margin: 0px;
     box-sizing: border-box;
     padding: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -14,6 +16,7 @@
     --colour-white: hsl(0, 0%, 100%);
     --line-colour: hsl(215, 32%, 27%);
     --Font-Base: 'Outfit', sans-serif;
+    --bg-transparent: none;
 }
 
 @mixin _base($BGcolor,$Height,$Display) {
@@ -32,22 +35,119 @@
     place-items: center;
     display: relative;
     .Card{
-        @include _base(var(--bg-card),60vh,flex);
-        width: 19vw;
+        @include _base(var(--bg-card),auto,flex);
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 18.3vw;
         border-radius: 15px;
         box-shadow: 0 .5rem 3rem rgba(0, 0, 0, 0.5);
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
         flex-direction: column;
         .overlay{
-            @include _base(var(--colour-blue),40vh,grid);
+            @include _base(var(--bg-transparent),35vh,grid);
             place-items: center;
+            border-radius: 10px;
+            .img-container{
+                @include _base(var(--bg-main),30.5vh,block);
+                width: 15.5vw;
+                border-radius: 10px;
+                background-image: url('../Image/Crystal.png');
+                background-position: center center;
+                background-size: cover;
+            }
+        }
+        .nft-name-container{
+            @include _base(var(--bg-transparent),auto,flex);
+            align-items: center;
+            justify-content: flex-start;
+            .text{
+                @include _font(var(--Font-Base),1.5em);
+                background: var(--bg-transparent);
+                color: var(--colour-white);
+                margin-left: 1.5vw;
+                cursor: pointer;
+                border: 0px solid var(--bg-transparent);
+            }
+            .text:hover{
+                color: var(--colour-cyan);
+            }
+        }
+        .nft-preview-card-description{
+            @include _base(var(--bg-transparent),auto,flex);
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 2vh;
+            .text{
+                @include _font(var(--Font-Base),1.1em);
+                color: var(--colour-blue);
+                margin-left: 1.5vw;
+                width: 15vw;
+            }
+        }
+        .price-nft{ 
+            @include _base(var(--bg-transparent),5vh,flex);
+            align-items: center;
+            margin-top: 1vh;
+            position: relative;
+            .eth{
+                color: var(--colour-cyan);
+                font-size: 1.2em;
+                margin-left: 1.2vw;
+            }
+            .eth-price-text{
+                @include _font(var(--Font-Base),1em);
+                color: var(--colour-cyan);
+                margin-left: .25vw;
+                font-weight: bold;
+            }
+            .time-nft-text{
+                @include _font(var(--Font-Base),1em);
+                margin-right: 1.5vw;
+                position: absolute;
+                right: 0;
+                display: flex;
+                align-items: center;
+                color: var(--colour-blue);
+            }
+        }
+        .nft-creator-container{
+            @include _base(var(--bg-transparent),7vh,flex);
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            align-items: center;
+            justify-content: center;
+            .inner-creator-container{
+                @include _base(var(--bg-transparent),7vh,flex);
+                width: 15.5vw;
+                border-top: 1px solid var(--colour-blue);
+                align-items: center;
+                justify-content: flex-start;
+                .creator-profile-img{
+                    background-image: url('../Image/daftpunk.jpg');
+                    background-position: center center;
+                    background-size: cover;
+                    height: 3.5vh;
+                    width: 1.8vw;
+                    border: 1px solid var(--colour-blue);
+                    border-radius: 50%;
+                }
+                .text{
+                    @include _font(var(--Font-Base),1em);
+                    color: var(--colour-blue);
+                    word-spacing: 2px;
+                    .name{
+                        @include _font(var(--Font-Base),1em);
+                        color: var(--colour-white);
+                    }
+                }
+            }
         }
     }
     .TextContainer{
         position: absolute;
         transform: translate(-50%,-50%);
         left: 50%;
-        top: 85%;
+        top: 95%;
         .text{
             @include _font(var(--Font-Base),.8em);
             color: var(--colour-blue);
