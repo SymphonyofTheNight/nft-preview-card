@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap'); // font-family: 'Outfit', sans-serif;
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+:root {
+    --bg-main: hsl(217, 54%, 11%);
+    --bg-card: hsl(216, 50%, 16%);
+    --colour-blue: hsl(215, 51%, 70%);
+    --colour-cyan: hsl(178, 100%, 50%);
+    --colour-white: hsl(0, 0%, 100%);
+    --line-colour: hsl(215, 32%, 27%);
+    --Font-Base: 'Outfit', sans-serif;
+}
+
+@mixin _base($BGcolor,$Height,$Display) {
+    background: $BGcolor;
+    height: $Height;
+    display: $Display;
+}
+
+@mixin _font($Font,$Size) {
+    font-family: $Font;
+    font-size: $Size;
+}
+
+.App{
+    @include _base(var(--bg-main),100vh,grid);
+    place-items: center;
+    display: relative;
+    .Card{
+        @include _base(var(--bg-card),60vh,flex);
+        width: 19vw;
+        border-radius: 15px;
+        box-shadow: 0 .5rem 3rem rgba(0, 0, 0, 0.5);
+        margin-bottom: 10vh;
+        flex-direction: column;
+        .overlay{
+            @include _base(var(--colour-blue),40vh,grid);
+            place-items: center;
+        }
+    }
+    .TextContainer{
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 85%;
+        .text{
+            @include _font(var(--Font-Base),.8em);
+            color: var(--colour-blue);
+            .Name{
+                @include _font(var(--Font-Base),1em);
+                color: var(--colour-white);
+                padding: 2px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
