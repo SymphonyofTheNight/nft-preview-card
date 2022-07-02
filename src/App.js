@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaEthereum, FaClock } from 'react-icons/fa';
 import './scss/Styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
