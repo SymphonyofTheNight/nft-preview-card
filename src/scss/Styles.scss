@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"); // font-family: 'Outfit', sans-serif;
 
-*{
+* {
     margin: 0px;
     box-sizing: border-box;
     padding: 0px;
@@ -19,90 +19,102 @@
     --bg-transparent: none;
 }
 
-@mixin _base($BGcolor,$Height,$Display) {
+@mixin _base($BGcolor, $Height, $Display) {
     background: $BGcolor;
     height: $Height;
     display: $Display;
 }
 
-@mixin _font($Font,$Size) {
+@mixin _font($Font, $Size) {
     font-family: $Font;
     font-size: $Size;
 }
 
-.App{
-    @include _base(var(--bg-main),100vh,grid);
+.App {
+    @include _base(var(--bg-main), 100vh, grid);
     place-items: center;
     display: relative;
-    .Card{
-        @include _base(var(--bg-card),auto,flex);
+
+    .Card {
+        @include _base(var(--bg-card), auto, flex);
         flex-direction: row;
         flex-wrap: wrap;
-        width: 18.3vw;
+        width: 355px;
         border-radius: 15px;
         box-shadow: 0 .5rem 3rem rgba(0, 0, 0, 0.5);
-        margin-bottom: 5vh;
+        margin-bottom: 50px;
         flex-direction: column;
-        .overlay{
-            @include _base(var(--bg-transparent),35vh,grid);
+
+        .overlay {
+            @include _base(var(--bg-transparent), 355px, grid);
             place-items: center;
             border-radius: 10px;
-            .img-container{
-                @include _base(var(--bg-main),30.5vh,block);
-                width: 15.5vw;
+
+            .img-container {
+                @include _base(var(--bg-main), 300px, block);
+                width: 295px;
                 border-radius: 10px;
                 background-image: url('../Image/Crystal.png');
                 background-position: center center;
                 background-size: cover;
             }
         }
-        .nft-name-container{
-            @include _base(var(--bg-transparent),auto,flex);
+
+        .nft-name-container {
+            @include _base(var(--bg-transparent), auto, flex);
             align-items: center;
             justify-content: flex-start;
-            .text{
-                @include _font(var(--Font-Base),1.5em);
+
+            .text {
+                @include _font(var(--Font-Base), 1.5em);
                 background: var(--bg-transparent);
                 color: var(--colour-white);
-                margin-left: 1.5vw;
+                margin-left: 28px;
                 cursor: pointer;
                 border: 0px solid var(--bg-transparent);
             }
-            .text:hover{
+
+            .text:hover {
                 color: var(--colour-cyan);
             }
         }
-        .nft-preview-card-description{
-            @include _base(var(--bg-transparent),auto,flex);
+
+        .nft-preview-card-description {
+            @include _base(var(--bg-transparent), auto, flex);
             align-items: center;
             justify-content: flex-start;
-            margin-top: 2vh;
-            .text{
-                @include _font(var(--Font-Base),1.1em);
+            margin-top: 20px;
+
+            .text {
+                @include _font(var(--Font-Base), 1.1em);
                 color: var(--colour-blue);
-                margin-left: 1.5vw;
-                width: 15vw;
+                margin-left: 28px;
+                width: 300px;
             }
         }
-        .price-nft{ 
-            @include _base(var(--bg-transparent),5vh,flex);
+
+        .price-nft {
+            @include _base(var(--bg-transparent), 5vh, flex);
             align-items: center;
-            margin-top: 1vh;
+            margin-top: 10px;
             position: relative;
-            .eth{
+
+            .eth {
                 color: var(--colour-cyan);
                 font-size: 1.2em;
-                margin-left: 1.2vw;
+                margin-left: 24px;
             }
-            .eth-price-text{
-                @include _font(var(--Font-Base),1em);
+
+            .eth-price-text {
+                @include _font(var(--Font-Base), 1em);
                 color: var(--colour-cyan);
                 margin-left: .25vw;
                 font-weight: bold;
             }
-            .time-nft-text{
-                @include _font(var(--Font-Base),1em);
-                margin-right: 1.5vw;
+
+            .time-nft-text {
+                @include _font(var(--Font-Base), 1em);
+                margin-right: 28px;
                 position: absolute;
                 right: 0;
                 display: flex;
@@ -110,58 +122,60 @@
                 color: var(--colour-blue);
             }
         }
-        .nft-creator-container{
-            @include _base(var(--bg-transparent),7vh,flex);
-            margin-top: 1vh;
-            margin-bottom: 1vh;
+
+        .nft-creator-container {
+            @include _base(var(--bg-transparent), 7vh, flex);
+            margin-top: 10px;
+            margin-bottom: 10px;
             align-items: center;
             justify-content: center;
-            .inner-creator-container{
-                @include _base(var(--bg-transparent),7vh,flex);
-                width: 15.5vw;
+
+            .inner-creator-container {
+                @include _base(var(--bg-transparent), 7vh, flex);
+                width: 298px;
                 border-top: 1px solid var(--colour-blue);
                 align-items: center;
                 justify-content: flex-start;
-                .creator-profile-img{
+
+                .creator-profile-img {
                     background-image: url('../Image/daftpunk.jpg');
                     background-position: center center;
                     background-size: cover;
-                    height: 3.5vh;
-                    width: 1.8vw;
+                    height: 35px;
+                    width: 35px;
                     border: 1px solid var(--colour-blue);
                     border-radius: 50%;
                 }
-                .text{
-                    @include _font(var(--Font-Base),1em);
+
+                .text {
+                    @include _font(var(--Font-Base), 1em);
                     color: var(--colour-blue);
                     word-spacing: 2px;
-                    .name{
-                        @include _font(var(--Font-Base),1em);
+
+                    .name {
+                        @include _font(var(--Font-Base), 1em);
                         color: var(--colour-white);
                     }
                 }
             }
         }
     }
-    .TextContainer{
+
+    .TextContainer {
         position: absolute;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         left: 50%;
         top: 95%;
-        .text{
-            @include _font(var(--Font-Base),.8em);
+
+        .text {
+            @include _font(var(--Font-Base), .8em);
             color: var(--colour-blue);
-            .Name{
-                @include _font(var(--Font-Base),1em);
+
+            .Name {
+                @include _font(var(--Font-Base), 1em);
                 color: var(--colour-white);
                 padding: 2px;
             }
         }
     }
 }
-
-
-
-
-
-
