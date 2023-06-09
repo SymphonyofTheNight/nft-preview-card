@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nft-preview-card/static/css/main.a68bb43e.css",
+    "main.js": "/nft-preview-card/static/js/main.1aa01b4e.js",
+    "static/media/Crystal.png": "/nft-preview-card/static/media/Crystal.936f3a47d7ef56c00ac3.png",
+    "static/media/daftpunk.jpg": "/nft-preview-card/static/media/daftpunk.cd5b87a491494f807fdc.jpg",
+    "index.html": "/nft-preview-card/index.html",
+    "main.a68bb43e.css.map": "/nft-preview-card/static/css/main.a68bb43e.css.map",
+    "main.1aa01b4e.js.map": "/nft-preview-card/static/js/main.1aa01b4e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a68bb43e.css",
+    "static/js/main.1aa01b4e.js"
+  ]
+}
